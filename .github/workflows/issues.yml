@@ -3,8 +3,15 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  contents: read # to fetch code (actions/checkout)
+
 jobs:   
   fastlane-env:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+      issues: write # to comment on issues
+
     name: fastlane env reminder
     runs-on: ubuntu-latest    
     steps:
